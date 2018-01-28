@@ -9,6 +9,7 @@
     <link href="style_custom.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 
     <title>users</title>
   </head>
@@ -31,11 +32,11 @@
               <th scope="col">Last</th>
             </tr>
           </thead>
-          <tbody v-for>
-            <tr>
-              <th scope="row">{{num}}</th>
-              <td>{{firstName}}</td>
-              <td>{{lastName}}</td>
+          <tbody>
+            <tr v-for = "item of usersList" v-bind:key = item.num>
+              <th scope="row">{{item.num}}</th>
+              <td>{{item.firstName}}</td>
+              <td>{{item.lastName}}</td>
             </tr>
           </tbody>
         </table>
