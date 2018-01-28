@@ -1,2 +1,2 @@
 # vueAdmin
-Admin 
+Admin panel

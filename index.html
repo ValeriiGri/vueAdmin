@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Custom styles for this template -->
+    
+    <link href="style_custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <title>users</title>
+  </head>
+  <body>
+  	<div class="container">
+
+      <header class="masthead">
+
+      </header>
+
+      <main role="main" id = "app">
+        <div v-if="!haveUsers">
+          Нет пользователей для отображения
+        </div>
+        <table v-else class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+            </tr>
+          </thead>
+          <tbody v-for>
+            <tr>
+              <th scope="row">{{num}}</th>
+              <td>{{firstName}}</td>
+              <td>{{lastName}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+
+      <!-- Site footer -->
+      <footer class="footer d-flex justify-content-between"></footer>
+
+    </div> <!-- /container -->
+
+    <script>
+      let app = new Vue({
+        el:'#app',
+        data:function(){
+          return {
+            usersList:[
+              { num:1,
+                firstName:"Mark",
+                lastName:"Otto"},
+              { num:2,
+                firstName:"Jacob",
+                lastName:"Thornton"},
+              { num:3,
+                firstName:"Larry",
+                lastName:"Bird"}
+            ]
+          };
+        },
+        computed:{
+          haveUsers:function(){
+            return this.usersList.length > 0;
+          }
+        }
+      });
+    </script>
+
+    <!-- Optional JavaScript -->
+    
+    <script>
+      window.jQuery || document.write('<script src="jquery-slim.min.js"><\/script>');
+    </script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/			Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">	
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="							sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/			aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous">
+    </script>
+  </body>
+</html>
