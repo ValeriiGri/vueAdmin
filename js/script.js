@@ -19,10 +19,5 @@ let app = new Vue({
           haveUsers:function(){
             return this.usersList.length > 0;
           }
-        },
-        methods:{
-          addUser:function(){
-            this.usersList.push();
-          }
         }
       });
