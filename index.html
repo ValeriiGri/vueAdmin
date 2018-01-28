@@ -24,24 +24,7 @@
         <div v-if="!haveUsers" class = "text-center">
           Нет пользователей для отображения
         </div>
-        <div v-else id="users-list">
-          <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for = "item of usersList" v-bind:key = item.num>
-                <th scope="row">{{item.num}}</th>
-                <td>{{item.firstName}}</td>
-                <td>{{item.lastName}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <list-of-users v-else v-bind:users = "users"></list-of-users>
 
           <hr>
           <hr>
@@ -55,13 +38,31 @@
       <footer class="footer d-flex justify-content-between"></footer>
 
     </div> <!-- /container -->
+    <script type="text/x-template" id="users-list">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for = "item of users" v-bind:key = item.num>
+            <th scope="row">{{item.num}}</th>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
     
     <script>
-      let usersList = {
-        name:'UsersList',//?
+      let usersListComp = {
+        name:'Users',
         template:'#users-list',
         props:{
-          usersList:{
+          users:{
             type:Array,
             required:true
           }
@@ -71,11 +72,11 @@
       let app = new Vue({
         el:'#app',
         components:{
-          'users-list': usersList
+          'list-of-users': usersListComp
         },
         data:function(){
           return {
-            usersList:[
+            users:[
               { num:1,
                 firstName:"Mark",
                 lastName:"Otto"},
@@ -90,12 +91,7 @@
         },
         computed:{
           haveUsers:function(){
-            return this.usersList.length > 0;
-          }
-        },
-        methods:{
-          addUser:function(){
-            this.usersList.push();
+            return this.users.length > 0;
           }
         }
       });
