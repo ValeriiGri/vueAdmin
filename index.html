@@ -22,7 +22,7 @@
         <div v-if="!haveUsers" class = "text-center">
           Нет пользователей для отображения
         </div>
-        <list-of-users v-else v-bind:users-list = "usersList"></list-of-users>
+        <list-of-users v-else v-bind:users-list = "list"></list-of-users>
 
           <hr>
           <hr>
@@ -74,7 +74,7 @@
         },
         data:function(){
           return {
-            usersList:[
+            list:[
               { num:1,
                 firstName:"Mark",
                 lastName:"Otto"},
@@ -89,7 +89,7 @@
         },
         computed:{
           haveUsers:function(){
-            return this.usersList.length > 0;
+            return this.list.length > 0;
           }
         }
       });
