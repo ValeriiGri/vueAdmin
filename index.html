@@ -16,15 +16,13 @@
   <body>
   	<div class="container">
 
-      <header class="masthead">
-
-      </header>
+      <header class="masthead"></header>
 
       <main role="main" id = "app">
         <div v-if="!haveUsers" class = "text-center">
           Нет пользователей для отображения
         </div>
-        <list-of-users v-else v-bind:users = "users"></list-of-users>
+        <list-of-users v-else v-bind:users-list = "usersList"></list-of-users>
 
           <hr>
           <hr>
@@ -48,7 +46,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for = "item of users" v-bind:key = item.num>
+          <tr v-for = "item of usersList" v-bind:key = item.num>
             <th scope="row">{{item.num}}</th>
             <td>{{item.firstName}}</td>
             <td>{{item.lastName}}</td>
@@ -62,7 +60,7 @@
         name:'Users',
         template:'#users-list',
         props:{
-          users:{
+          usersList:{
             type:Array,
             required:true
           }
@@ -76,7 +74,7 @@
         },
         data:function(){
           return {
-            users:[
+            usersList:[
               { num:1,
                 firstName:"Mark",
                 lastName:"Otto"},
@@ -91,7 +89,7 @@
         },
         computed:{
           haveUsers:function(){
-            return this.users.length > 0;
+            return this.usersList.length > 0;
           }
         }
       });
