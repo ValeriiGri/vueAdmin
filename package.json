@@ -1,0 +1,25 @@
+{
+  "name": "vueadmin",
+  "version": "1.0.0",
+  "description": "SPA Admin panel",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "json-server": "^0.12.1",
+    "static-server": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/static-server C:/Users/66826/repo/vueAdmin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriiGri/vueAdmin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeriiGri/vueAdmin/issues"
+  },
+  "homepage": "https://github.com/ValeriiGri/vueAdmin#readme"
+}

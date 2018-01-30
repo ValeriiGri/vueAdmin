@@ -16,19 +16,28 @@
   <body>
   	<div class="container">
 
-      <header class="masthead"></header>
+      <header class="masthead">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="index.html">Home</a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Add</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Edit</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
 
       <main role="main" id = "app">
-        <div v-if="!haveUsers" class = "text-center">
-          Нет пользователей для отображения
+        <div v-if="!haveUsers" class = "text-center alert alert-warning ">
+          Загрузка...
         </div>
-        <list-of-users v-else v-bind:users-list = "list"></list-of-users>
-
-          <hr>
-          <hr>
-
-        <a href="addUser.html">добавить пользователя</a>
-        <a href="editUser.html">редактировать пользователя</a>
+        <list-of-users v-else v-bind:users-list = "users"></list-of-users>
 
       </main>
 
@@ -41,15 +50,25 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">Active</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Age</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Phone</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for = "item of usersList" v-bind:key = item.num>
-            <th scope="row">{{item.num}}</th>
-            <td>{{item.firstName}}</td>
-            <td>{{item.lastName}}</td>
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.isActive}}</td>
+            <td>{{item.balance}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
           </tr>
         </tbody>
       </table>
@@ -74,24 +93,39 @@
         },
         data:function(){
           return {
-            list:[
-              { num:1,
-                firstName:"Mark",
-                lastName:"Otto"},
-              { num:2,
-                firstName:"Jacob",
-                lastName:"Thornton"},
-              { num:3,
-                firstName:"Larry",
-                lastName:"Bird"}
-            ]
+            users:[]
           };
         },
         computed:{
           haveUsers:function(){
-            return this.list.length > 0;
+            return this.users.length > 0;
           }
+        },
+        methods:{
+          getData:function(){
+            let xhr = new XMLHttpRequest();
+
+            let self = this;
+
+            xhr.addEventListener('readystatechange',function(event) {
+              if (xhr.readyState !== 4 || xhr.status !== 200){
+                return;
+              }
+
+              const data =  JSON.parse(xhr.responseText);
+
+              self.users = data;
+            });
+
+            xhr.open('GET', 'data/users.json', true);
+            xhr.send(); 
+          }
+        },
+        mounted: function(){
+          this.getData();
         }
+
+        
       });
     </script>
 

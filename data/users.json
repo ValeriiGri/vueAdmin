@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "isActive": false,
+    "balance": "$2,668.50",
+    "age": 33,
+    "name": "Justice Mullins",
+    "gender": "male",
+    "email": "justicemullins@netplax.com",
+    "phone": "+1 (972) 565-3173"
+  },
+  {
+    "id": 2,
+    "isActive": true,
+    "balance": "$2,520.77",
+    "age": 27,
+    "name": "Acevedo Lowery",
+    "gender": "male",
+    "email": "acevedolowery@netplax.com",
+    "phone": "+1 (908) 449-2331"
+  },
+  {
+    "id": 3,
+    "isActive": true,
+    "balance": "$1,309.91",
+    "age": 21,
+    "name": "Lynch Carey",
+    "gender": "male",
+    "email": "lynchcarey@netplax.com",
+    "phone": "+1 (853) 514-3226"
+  },
+  {
+    "id": 4,
+    "isActive": true,
+    "balance": "$2,846.47",
+    "age": 20,
+    "name": "Valarie Williamson",
+    "gender": "female",
+    "email": "valariewilliamson@netplax.com",
+    "phone": "+1 (850) 455-2241"
+  },
+  {
+    "id": 5,
+    "isActive": true,
+    "balance": "$1,537.70",
+    "age": 37,
+    "name": "Yates Buchanan",
+    "gender": "male",
+    "email": "yatesbuchanan@netplax.com",
+    "phone": "+1 (906) 587-3490"
+  },
+  {
+    "id": 6,
+    "isActive": true,
+    "balance": "$2,301.93",
+    "age": 33,
+    "name": "Fry Richards",
+    "gender": "male",
+    "email": "fryrichards@netplax.com",
+    "phone": "+1 (800) 577-2551"
+  },
+  {
+    "id": 7,
+    "isActive": true,
+    "balance": "$3,550.84",
+    "age": 26,
+    "name": "Ratliff Russo",
+    "gender": "male",
+    "email": "ratliffrusso@netplax.com",
+    "phone": "+1 (884) 571-3344"
+  },
+  {
+    "id": 8,
+    "isActive": true,
+    "balance": "$3,521.07",
+    "age": 34,
+    "name": "Queen Graves",
+    "gender": "female",
+    "email": "queengraves@netplax.com",
+    "phone": "+1 (811) 515-2250"
+  },
+  {
+    "id": 9,
+    "isActive": false,
+    "balance": "$1,838.40",
+    "age": 40,
+    "name": "Hilary Barlow",
+    "gender": "female",
+    "email": "hilarybarlow@netplax.com",
+    "phone": "+1 (915) 555-2824"
+  },
+  {
+    "id": 10,
+    "isActive": true,
+    "balance": "$3,543.92",
+    "age": 35,
+    "name": "Simon Cleveland",
+    "gender": "male",
+    "email": "simoncleveland@netplax.com",
+    "phone": "+1 (857) 500-2156"
+  },
+  {
+    "id": 11,
+    "isActive": false,
+    "balance": "$1,601.95",
+    "age": 39,
+    "name": "Glass Gaines",
+    "gender": "male",
+    "email": "glassgaines@netplax.com",
+    "phone": "+1 (907) 545-3895"
+  },
+  {
+    "id": 12,
+    "isActive": false,
+    "balance": "$1,263.20",
+    "age": 36,
+    "name": "Marquita Ashley",
+    "gender": "female",
+    "email": "marquitaashley@netplax.com",
+    "phone": "+1 (939) 571-2964"
+  },
+  {
+    "id": 13,
+    "isActive": false,
+    "balance": "$3,238.50",
+    "age": 34,
+    "name": "Hopkins Russell",
+    "gender": "male",
+    "email": "hopkinsrussell@netplax.com",
+    "phone": "+1 (888) 503-3180"
+  },
+  {
+    "id": 14,
+    "isActive": true,
+    "balance": "$1,600.55",
+    "age": 28,
+    "name": "Park Sullivan",
+    "gender": "male",
+    "email": "parksullivan@netplax.com",
+    "phone": "+1 (882) 486-2824"
+  },
+  {
+    "id": 15,
+    "isActive": true,
+    "balance": "$2,485.96",
+    "age": 21,
+    "name": "Claudine Mcdowell",
+    "gender": "female",
+    "email": "claudinemcdowell@netplax.com",
+    "phone": "+1 (964) 553-3184"
+  },
+  {
+    "id": 16,
+    "isActive": false,
+    "balance": "$3,428.00",
+    "age": 22,
+    "name": "Lorna Valencia",
+    "gender": "female",
+    "email": "lornavalencia@netplax.com",
+    "phone": "+1 (821) 451-3381"
+  },
+  {
+    "id": 17,
+    "isActive": true,
+    "balance": "$2,711.55",
+    "age": 37,
+    "name": "Jeanie Gilliam",
+    "gender": "female",
+    "email": "jeaniegilliam@netplax.com",
+    "phone": "+1 (899) 482-2835"
+  },
+  {
+    "id": 18,
+    "isActive": true,
+    "balance": "$2,742.93",
+    "age": 36,
+    "name": "Bethany Alexander",
+    "gender": "female",
+    "email": "bethanyalexander@netplax.com",
+    "phone": "+1 (822) 458-2163"
+  },
+  {
+    "id": 19,
+    "isActive": false,
+    "balance": "$3,131.95",
+    "age": 32,
+    "name": "Ball Parks",
+    "gender": "male",
+    "email": "ballparks@netplax.com",
+    "phone": "+1 (881) 569-2024"
+  },
+  {
+    "id": 20,
+    "isActive": false,
+    "balance": "$2,053.18",
+    "age": 29,
+    "name": "Justine Parker",
+    "gender": "female",
+    "email": "justineparker@netplax.com",
+    "phone": "+1 (863) 527-2822"
+  },
+  {
+    "id": 21,
+    "isActive": true,
+    "balance": "$3,391.97",
+    "age": 23,
+    "name": "Deirdre Prince",
+    "gender": "female",
+    "email": "deirdreprince@netplax.com",
+    "phone": "+1 (999) 499-2677"
+  }
+]
