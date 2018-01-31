@@ -17,11 +17,27 @@
   	<div class="container">
 
       <header class="masthead">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="index.html">Home</a>
 
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Add</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="editUser.html">Edit</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </header>
 
-      <main role="main" id = "form-edit-page">
-        <form-for-edit></form-for-edit>
+      <main role="main" id = "app">
+        <div v-if="!user" class = "text-center alert alert-primary ">
+          Загрузка...
+        </div>
+        <form-for-edit v-else v-bind:user-expected ="user"></form-for-edit>
       </main>
 
       <!-- Site footer -->
@@ -30,21 +46,31 @@
     </div> <!-- /container -->
 
     <script type="text/x-template" id="form-edit-component">
-      <form>
-        <div class="form-row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="First name" key = "firstN">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" key = "lastN">
-          </div>
+      <div class="font-weight-bold">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" v-model="userExpected.name">
         </div>
-        <div class="form-group row">
-          <div class="col">
-            <button class="btn btn-primary" v-on:click = "editUser">Edit</button>
-          </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" v-model="userExpected.email">
         </div>
-      </form>
+        <div class="form-group">
+          <label>Balance</label>
+          <input type="text" class="form-control" v-model="userExpected.balance">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" class="form-control" v-model="userExpected.phone">
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="text" class="form-control" v-model="userExpected.age">
+        </div>
+
+        <pre>{{userExpected}}</pre>
+      </div>
+
     </script>
 
      <script>
@@ -52,27 +78,46 @@
         name:'Edit',
         template:'#form-edit-component',
         props:{
-          user:{
-            type:Array,
+          userExpected:{
+            type:Object,
             required:true
           }
         }
       };
 
-      let form = new Vue({
-        el:'#form-edit-page',
+      let app = new Vue({
+        el:'#app',
         components:{
           'form-for-edit': formEditComp
         },
         data:function(){
           return {
-            user:[
-              { num:1,
-                firstName:"Mark",
-                lastName:"Otto"}
-            ]
+            user:null
           };
-        }
+        },
+        methods: {
+          getUser: function(){
+            let xhr = new XMLHttpRequest();
+
+            let self = this;
+
+            xhr.addEventListener('readystatechange',function(event) {
+              if (xhr.readyState !== 4 || xhr.status !== 200){
+                return;
+              }
+
+              const data =  JSON.parse(xhr.responseText);
+
+              self.user = data[0];
+            });
+
+            xhr.open('GET', 'data/users.json', true);
+            xhr.send(); 
+          },
+        },
+        mounted: function(){
+            this.getUser();
+          }
       });
     </script>
 

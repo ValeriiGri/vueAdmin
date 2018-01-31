@@ -26,7 +26,7 @@
                 <a class="nav-link" href="#">Add</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Edit</a>
+                <a class="nav-link" href="editUser.html">Edit</a>
               </li>
             </ul>
           </div>
@@ -34,10 +34,10 @@
       </header>
 
       <main role="main" id = "app">
-        <div v-if="!haveUsers" class = "text-center alert alert-warning ">
+        <div v-if="!haveUsers" class = "text-center alert alert-primary ">
           Загрузка...
         </div>
-        <list-of-users v-else v-bind:users-list = "users"></list-of-users>
+        <list-of-users v-else v-bind:users-expected = "users"></list-of-users>
 
       </main>
 
@@ -50,22 +50,22 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Name</th>
             <th scope="col">Active</th>
             <th scope="col">Balance</th>
             <th scope="col">Age</th>
-            <th scope="col">Name</th>
             <th scope="col">Gender</th>
             <th scope="col">E-mail</th>
             <th scope="col">Phone</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for = "item of usersList" v-bind:key = item.num>
+          <tr v-for = "item of usersExpected" v-bind:key = item.num>
             <th scope="row">{{item.id}}</th>
+            <td>{{item.name}}</td>
             <td>{{item.isActive}}</td>
             <td>{{item.balance}}</td>
             <td>{{item.age}}</td>
-            <td>{{item.name}}</td>
             <td>{{item.gender}}</td>
             <td>{{item.email}}</td>
             <td>{{item.phone}}</td>
@@ -79,7 +79,7 @@
         name:'Users',
         template:'#users-list',
         props:{
-          usersList:{
+          usersExpected:{
             type:Array,
             required:true
           }
